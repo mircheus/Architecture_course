@@ -1,4 +1,4 @@
-﻿namespace Homework_2.Homework_2_2.Scripts.NPC.StateMachine
+﻿namespace Homework_2.Homework_2_2
 {
     public interface IStateSwitcher
     {

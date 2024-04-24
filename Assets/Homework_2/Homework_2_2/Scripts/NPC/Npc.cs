@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Homework_2.Homework_2_2.Scripts;
 
-namespace Homework_2.Homework_2_2.Scripts.NPC
+namespace Homework_2.Homework_2_2
 {
     public class Npc : MonoBehaviour
     {

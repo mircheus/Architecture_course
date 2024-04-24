@@ -1,4 +1,4 @@
-﻿namespace Homework_2.Homework_2_2.Scripts.NPC
+﻿namespace Homework_2.Homework_2_2
 {
     public class NpcConfig
     {

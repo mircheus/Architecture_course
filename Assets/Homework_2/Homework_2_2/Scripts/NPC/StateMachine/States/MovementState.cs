@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Homework_2.Homework_2_2.Scripts.NPC.StateMachine.States
+namespace Homework_2.Homework_2_2
 {
     public abstract class MovementState : IState
     {

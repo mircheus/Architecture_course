@@ -1,4 +1,4 @@
-﻿namespace Homework_2.Homework_2_2.Scripts.NPC.StateMachine.States.MovementStates
+﻿namespace Homework_2.Homework_2_2
 {
     public class MoveToRestState : MovementState
     {
@@ -8,7 +8,7 @@
 
         protected override void ReachPoint<RestState>()
         {
-            base.ReachPoint<States.RestState>();
+            base.ReachPoint<RestState>();
         }
     }
 }
