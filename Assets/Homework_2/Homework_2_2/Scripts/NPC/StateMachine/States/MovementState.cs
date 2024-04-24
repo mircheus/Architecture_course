@@ -7,22 +7,24 @@ namespace Homework_2.Homework_2_2
     public abstract class MovementState : IState
     {
         protected readonly IStateSwitcher StateSwitcher;
-        protected readonly IState TargetWorkState;
+        protected readonly StateMachineData Data;
 
         private readonly Npc _npc;
         
         private Coroutine _movingCoroutine;
-        private float _time;
-        public MovementState(IStateSwitcher stateSwitcher, Npc npc)
+        private float _timeCounter;
+        protected float TimeToReach;
+        public MovementState(IStateSwitcher stateSwitcher, StateMachineData data, Npc npc)
         {
             StateSwitcher = stateSwitcher;
+            Data = data;
             _npc = npc;
         }
         
         public void Enter()
         {
             Debug.Log("Иду к точке");
-            _time = 0;
+            _timeCounter = 0;
         }
 
         public void Exit()
@@ -32,9 +34,9 @@ namespace Homework_2.Homework_2_2
 
         public void Update()
         {
-            _time += Time.deltaTime;
+            _timeCounter += Time.deltaTime;
 
-            if (_time >= 3)
+            if (_timeCounter >= TimeToReach)
             {
                 ReachPoint<IState>();
             }

@@ -10,12 +10,13 @@ namespace Homework_2.Homework_2_2
 
         public NpcStateMachine(Npc npc)
         {
+            StateMachineData data = new StateMachineData();
+            
             _states = new List<IState>()
             {
-                new MoveToWorkState(this, npc),
-                new WorkState(this, npc),
-                new MoveToRestState(this, npc),
-                new RestState(this, npc)
+                new WorkState(this, data, npc),
+                new MoveState(this, data, npc),
+                new RestState(this, data, npc)
             };
 
             _currentState = _states[0];
