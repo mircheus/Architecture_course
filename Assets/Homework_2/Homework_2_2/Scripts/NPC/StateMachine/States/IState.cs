@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IState
+namespace Homework_2.Homework_2_2
 {
-    void Enter();
-    void Exit();
-    void Update();
+    public interface IState
+    {
+        void Enter();
+        void Exit();
+        void Update();
+    }
 }
+
