@@ -1,13 +1,13 @@
-﻿using UnityEngine;
+﻿using OpenCover.Framework.Model;
+using UnityEngine;
 
 namespace Homework_3.Homework_3_2
 {
     public class Paladin : Enemy
     {
-        private const string PaladinClass = "Paladin";
-
-        public Paladin(Race race) : base(race, PaladinClass)
+        public Paladin(Race race) : base(race)
         {
+            ClassName = EnemyClass.Paladin;
         }
 
         public override void Attack()

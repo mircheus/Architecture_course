@@ -2,13 +2,13 @@
 {
     public abstract class Enemy : IAttacker
     {
-        public string ClassName; //  TODO: Сомнительно, но окэй
-        protected readonly Race Race;
+        public EnemyClass ClassName { get; protected set; }
+        public RaceType RaceType { get; protected set; }
+        public readonly Race Race;
 
-        protected Enemy(Race race, string className)
+        protected Enemy(Race race)
         {
             Race = race;
-            ClassName = className;
         }
 
         public abstract void Attack();

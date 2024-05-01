@@ -2,13 +2,12 @@
 {
     public abstract class Race
     {
-        public readonly string RaceName;
+        private readonly string _raceName;
 
-        protected Race(string raceName)
+        protected Race()
         {
-            RaceName = raceName;
         }
 
-        public virtual void ApplySpecialAbility(){}
+        public abstract void ApplySpecialAbility();
     }
 }

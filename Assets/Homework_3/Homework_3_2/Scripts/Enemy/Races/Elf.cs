@@ -2,15 +2,14 @@
 {
     public class Elf : Race
     {
-        private const string RaceName = "Elf";
+        public const string RaceName = "Elf";
         
-        public Elf(string raceName) : base(RaceName)
+        public Elf()
         {
         }
         
         public override void ApplySpecialAbility()
         {
-            base.ApplySpecialAbility();
         }
     }
 }

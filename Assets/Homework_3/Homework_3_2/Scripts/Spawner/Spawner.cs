@@ -10,7 +10,6 @@ namespace Homework_3.Homework_3_2
     public class Spawner : MonoBehaviour
     {
         [SerializeField] private RaceType _raceType;
-        [SerializeField] private float _spawnCooldown;
 
         private EnemyFactory _enemyFactory;
 
@@ -24,26 +23,21 @@ namespace Homework_3.Homework_3_2
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Enemy randomEnemy = SpawnRandomTypeEnemy();
-                Debug.Log("\nRace: " + _raceType + " \nClass: " + randomEnemy.ClassName);
+                Debug.Log("[" + gameObject.name + "]" + " Race: " + randomEnemy.Race + " Class: " + randomEnemy.ClassName);
             }
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                SetFactory(RaceType.Elf);
-            }
-
-            if (Input.GetKeyDown(KeyCode.O))
-            {
-                SetFactory(RaceType.Orc);
+                SetFactory(_enemyFactory.FactoryType == RaceType.Elf ? RaceType.Orc : RaceType.Elf);
             }
         }
         
         private void SetFactory(RaceType raceType)
         {
-            switch (raceType)
+            switch (raceType) 
             {
                 case RaceType.Elf:
-                    _enemyFactory= new ElfFactory();
+                    _enemyFactory = new ElfFactory();
                     break;
                 
                 case RaceType.Orc:
@@ -61,12 +55,6 @@ namespace Homework_3.Homework_3_2
             EnemyClass randomClass = (EnemyClass)Random.Range(0, length);
             Enemy result = _enemyFactory.Get(randomClass);
             return result;
-        }
-        
-        private IEnumerator SpawnEnemyWithCooldown()
-        {
-            yield return new WaitForSeconds(_spawnCooldown);
-            SpawnRandomTypeEnemy();
         }
     }
 }
