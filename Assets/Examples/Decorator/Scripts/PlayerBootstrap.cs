@@ -12,7 +12,8 @@ namespace Homework_3.Homework_3_5.DecoratorExample
         
         private void Awake()
         {
-            _player.Initialize(new AngelHealth((new ArmorHealth(new Health(50), 3)), 4, 4, this));
+            // _player.Initialize(new AngelHealth((new ArmorHealth(new Health(50), 3)), 4, 4, this));
+            _player.Initialize(new Health(50));
         }
 
         private void Update()
