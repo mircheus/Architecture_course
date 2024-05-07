@@ -2,11 +2,13 @@
 {
     public abstract class StatProvider : IStatProvider
     {
-        protected IStatProvider Stats;
+        protected readonly IStatProvider Stats;
 
-        public StatProvider(IStatProvider stats)
+        protected StatProvider(IStatProvider stats)
         {
-            Stats = stats;
+            Strength = stats.GetStrength();
+            Intelligence = stats.GetIntelligence();
+            Agility = stats.GetAgility();
         }
 
         public int Strength { get; }

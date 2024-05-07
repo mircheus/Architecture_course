@@ -1,65 +1,66 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace Homework_3.Homework_3_5
 {
-    public class RaceStatProvider : StatProvider
+    public class RaceStatProvider : IStatProvider
     {
+        private IStatProvider _stats;
         private Race _race;
-        
-        public RaceStatProvider(IStatProvider stats, Race race) : base(stats)
+
+        public RaceStatProvider(IStatProvider stats, Race race)
         {
+            _stats = stats;
             _race = race;
         }
 
-        public override int GetStrength()
+        public int GetStrength()
         {
             switch (_race)
             {
                 case Race.Orc:
-                    return Stats.Strength + 5;
+                    return _stats.GetStrength() + 5;
                 
                 case Race.Elf:
-                    return Stats.Strength + 2;
+                    return _stats.GetStrength() + 2;
                 
                 case Race.Human:
-                    return Stats.Strength;
+                    return _stats.GetStrength();
                 
                 default:
                     throw new ArgumentException(nameof(_race));
             }
         }
 
-        public override int GetIntelligence()
+        public int GetIntelligence()
         {
             switch (_race)
             {
                 case Race.Orc:
-                    return Stats.Intelligence;
+                    return _stats.GetIntelligence();
                 
                 case Race.Elf:
-                    return Stats.Intelligence + 5;
+                    return _stats.GetIntelligence() + 5;
                 
                 case Race.Human:
-                    return Stats.Intelligence;
+                    return _stats.GetIntelligence();
                 
                 default:
                     throw new ArgumentException(nameof(_race));
             }
         }
 
-        public override int GetAgility()
+        public int GetAgility()
         {
             switch (_race)
             {
                 case Race.Orc:
-                    return Stats.Agility - 1;
+                    return _stats.GetAgility() - 1;
                 
                 case Race.Elf:
-                    return Stats.Agility + 2;
+                    return _stats.GetAgility() + 2;
                 
                 case Race.Human:
-                    return Stats.Agility;
+                    return _stats.GetAgility();
                 
                 default:
                     throw new ArgumentException(nameof(_race));

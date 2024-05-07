@@ -10,7 +10,8 @@ namespace Homework_3.Homework_3_5
         private void Awake()
         {
             // _player.Initialize(new SpecializationStatProvider(new RaceStatProvider(new CharacterStats(50, 10, 5), Race.Elf), Specialization.Mage));
-            _player.Initialize(new RaceStatProvider(new CharacterStats(0, 0, 0), Race.Elf));
+            _player.Initialize(new SpecializationStatProvider(new RaceStatProvider(new CharacterStats(100, 100, 100), Race.Elf), Specialization.Thief));
+            // _player.Initialize(new SpecializationStatProvider(new CharacterStats(100, 100, 100), Specialization.Mage));
             // Сейчас characterStats не передаются, поэтому при ещё одном обороте декоратора будет неверное поведение, будут использованы нулевые значения
             _player.GetStats();
         }

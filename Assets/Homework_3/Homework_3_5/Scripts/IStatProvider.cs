@@ -2,9 +2,6 @@
 {
     public interface IStatProvider
     {
-        int Strength { get; }
-        int Intelligence { get; }
-        int Agility { get; }
         int GetStrength();
         int GetIntelligence();
         int GetAgility();
