@@ -11,7 +11,7 @@ namespace Homework_1.HW_1_4
         
         public ClickByColorMode(BalloonContainer balloonContainer)
         {
-            CountAllColors(balloonContainer.Ballons);
+            CountAllColors(balloonContainer.Balloons);
             PrintAllBalloonColors();
         }
         
