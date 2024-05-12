@@ -346,6 +346,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 1625440902}
+  _strength: 10
+  _intelligence: 10
+  _agility: 10
 --- !u!1 &1625440900
 GameObject:
   m_ObjectHideFlags: 0
