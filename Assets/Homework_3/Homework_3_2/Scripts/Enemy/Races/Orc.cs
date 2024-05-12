@@ -1,15 +1,14 @@
-﻿namespace Homework_3.Homework_3_2
+﻿using UnityEngine;
+
+namespace Homework_3.Homework_3_2
 {
     public class Orc : Race
     {
-        public const string RaceName = "Orc";
+        private string _specialAbility = "Орк суперсила!";
         
-        public Orc()
+        public override string ApplySpecialAbility()
         {
-        }
-     
-        public override void ApplySpecialAbility()
-        {
+            return _specialAbility;
         }
     }
 }

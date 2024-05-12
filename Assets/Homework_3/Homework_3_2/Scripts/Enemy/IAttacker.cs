@@ -2,6 +2,6 @@
 {
     public interface IAttacker
     {
-        void Attack();
+        string Attack();
     }
 }

@@ -2,7 +2,6 @@
 {
     public enum RaceType
     {
-        Undefined = -1,
         Elf,
         Orc
     }

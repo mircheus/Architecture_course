@@ -4,11 +4,13 @@ namespace Homework_3.Homework_3_2
 {
     public class ElfFactory : EnemyFactory
     {
+        public override RaceType FactoryType { get; protected set; }
+        
         public ElfFactory()
         {
             FactoryType = RaceType.Elf;
         }
-        
+
         public override Enemy Get(EnemyClass enemyClass)
         {
             switch (enemyClass)

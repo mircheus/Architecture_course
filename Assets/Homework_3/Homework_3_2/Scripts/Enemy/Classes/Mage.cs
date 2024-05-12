@@ -4,21 +4,23 @@ namespace Homework_3.Homework_3_2
 {
     public class Mage : Enemy
     {
+        private string _attackType = "Атака фаерболом!";
+        
         public Mage(Race race) : base(race)
         {
             ClassName = EnemyClass.Mage;
         }
         
-        public override void Attack()
+        public override string Attack()
         {
-            CastSpell();
+            return CastSpell();
         }
 
 
-        private void CastSpell()
+        private string CastSpell()
         {
-            Debug.Log("Кастую фаерболл");
-            Race.ApplySpecialAbility();
+            string resultAttack = _attackType + " " + Race.ApplySpecialAbility();
+            return resultAttack;
         }
     }
 }

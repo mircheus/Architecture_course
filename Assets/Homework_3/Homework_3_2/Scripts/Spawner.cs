@@ -23,11 +23,14 @@ namespace Homework_3.Homework_3_2
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Enemy randomEnemy = SpawnRandomTypeEnemy();
-                Debug.Log("[" + gameObject.name + "]" + " Race: " + randomEnemy.Race + " Class: " + randomEnemy.ClassName);
+                string attack = randomEnemy.Attack();
+                Debug.Log($"[{gameObject.name}] {attack}");
             }
 
             if (Input.GetKeyDown(KeyCode.E))
             {
+                var factoryType = _enemyFactory.FactoryType == RaceType.Elf ? RaceType.Orc : RaceType.Elf;
+                Debug.Log($"[{gameObject.name}] switching to {factoryType} factory type");
                 SetFactory(_enemyFactory.FactoryType == RaceType.Elf ? RaceType.Orc : RaceType.Elf);
             }
         }

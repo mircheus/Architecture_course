@@ -3,7 +3,6 @@
     public abstract class Enemy : IAttacker
     {
         public EnemyClass ClassName { get; protected set; }
-        public RaceType RaceType { get; protected set; }
         public readonly Race Race;
 
         protected Enemy(Race race)
@@ -11,6 +10,6 @@
             Race = race;
         }
 
-        public abstract void Attack();
+        public abstract string Attack(); // Возвращает строку с описанием атаки, чтобы было удобнее видеть какой тип объекта произвела фабрика
     }
 }

@@ -5,20 +5,22 @@ namespace Homework_3.Homework_3_2
 {
     public class Paladin : Enemy
     {
+        private string _attackType = "Атака мечом!";
+        
         public Paladin(Race race) : base(race)
         {
             ClassName = EnemyClass.Paladin;
         }
 
-        public override void Attack()
+        public override string Attack()
         {
-            AttackBySword();
+            return AttackBySword();
         }
 
-        protected void AttackBySword()
+        protected string AttackBySword()
         {
-            Debug.Log("Бью мечом");
-            Race.ApplySpecialAbility();
+            string resultAttack = _attackType + " " + Race.ApplySpecialAbility();
+            return resultAttack;
         }
     }
 }

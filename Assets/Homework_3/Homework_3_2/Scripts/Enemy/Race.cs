@@ -8,6 +8,6 @@
         {
         }
 
-        public abstract void ApplySpecialAbility();
+        public abstract string ApplySpecialAbility();
     }
 }
