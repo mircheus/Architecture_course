@@ -7,8 +7,7 @@ namespace Homework_1.HW_1_4
     {
         private Dictionary<BalloonColor, int> _balloonsByColorsCount = new Dictionary<BalloonColor, int>();
         public event Action GameFinished;
-        // public event Action PointAdded;
-        
+
         public ClickByColorMode(BalloonContainer balloonContainer)
         {
             CountAllColors(balloonContainer.Balloons);
